@@ -9,7 +9,7 @@ pub struct Arg {
 
 impl Arg {
     pub fn new(x: i64, is_variable: bool) -> Self {
-        if is_variable {
+        if is_variable && x >= 0 {
             Self {
                 value: None,
                 index: Some(x as usize),
