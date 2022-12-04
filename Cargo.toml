@@ -1,7 +1,7 @@
 [package]
 name = "hdrepresentation"
 authors = ["docfate111"]
-version = "0.1.85"
+version = "0.1.851"
 edition = "2021"
 description = "HYDRAulic Damnation's representation of filesystem for fuzzing"
 license = "MIT"

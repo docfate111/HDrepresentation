@@ -259,6 +259,10 @@ impl Program {
         serde_json::from_str(&file).unwrap()
     }
 
+    pub fn from_str(s: String) -> Result<Self, serde_json::Error> {
+        serde_json::from_str(&s)
+    }
+
     pub fn to_path<P: AsRef<Path>>(&self, path: P) -> std::io::Result<()> {
         let serialized_str = serde_json::to_string(&self)?;
         write(path, serialized_str)?;
