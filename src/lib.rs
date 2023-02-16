@@ -254,9 +254,9 @@ impl Program {
         }
     }
 
-    pub fn from_path<P: AsRef<Path>>(path: P) -> Self {
+    pub fn from_path<P: AsRef<Path>>(path: P) -> Result<Self, serde_json::Error> {
         let file = read_to_string(path).unwrap();
-        serde_json::from_str(&file).unwrap()
+        serde_json::from_str(&file)
     }
 
     pub fn from_str(s: String) -> Result<Self, serde_json::Error> {
